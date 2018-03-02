@@ -36,6 +36,8 @@
 	</array>
 	<key>NSContactsUsageDescription</key>
 	<string>We will be getting your Contacts!</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We wil be accessing your Calendar!</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

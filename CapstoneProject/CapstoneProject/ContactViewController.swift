@@ -8,7 +8,9 @@
 
 import UIKit
 import Contacts
+/* Email and Export */
 import MessageUI
+import EventKit
 
 class ContactViewController: UIViewController, MFMailComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
 
@@ -16,6 +18,9 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
     
     var contactStore = CNContactStore()
     var contacts = [ContactStruct]()
+    
+    /* Export */
+    let store = EKEventStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +44,7 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
         // Dispose of any resources that can be recreated.
     }
     
-
+    // SEND EMAIL
     @IBAction func sendEmail(_ sender: Any) {
     
         let mailComposeViewController = configureMailController()
@@ -128,6 +133,39 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
         }
         tableView.reloadData()
     }
+    
+    func createEventinTheCalendar(with title:String, forDate eventStartDate:Date, toDate eventEndDate:Date) {
+        
+        store.requestAccess(to: .event) { (success, error) in
+            if  error == nil {
+                let event = EKEvent.init(eventStore: self.store)
+                event.title = title
+                event.calendar = self.store.defaultCalendarForNewEvents // this will return deafult calendar from device calendars
+                event.startDate = eventStartDate
+                event.endDate = eventEndDate
+                
+                let alarm = EKAlarm.init(absoluteDate: Date.init(timeInterval: -3600, since: event.startDate))
+                event.addAlarm(alarm)
+                
+                do {
+                    try self.store.save(event, span: .thisEvent)
+                    //event created successfullt to default calendar
+                } catch let error as NSError {
+                    print("failed to save event with error : \(error)")
+                }
+                
+            } else {
+                //we have error in getting access to device calnedar
+                print("error = \(String(describing: error?.localizedDescription))")
+            }
+        }
+    }
+    // EXPORT CALENDAR
+    @IBAction func createCalEvent(_ sender: Any) {
+        let currentDateTime = Date()
+        createEventinTheCalendar(with: "Playdate", forDate: currentDateTime, toDate: currentDateTime)
+    }
+    
     /*
     // MARK: - Navigation
 

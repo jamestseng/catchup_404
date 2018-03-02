@@ -8,10 +8,17 @@
 
 import UIKit
 
+/* EMAIL and EXPORT*/
+import MessageUI
+import EventKit
+
+
 class DietViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
 
     @IBOutlet weak var collectionView: UICollectionView!
     let items = ["None", "No Dairy", "Vegetarian", "Meat-Lover", "No Seafood", "Vegan", "Healthy"]
+    
+    /*EMAIL and EXPORT*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +56,9 @@ class DietViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
     }
+    
+    /* Email and Export functions. Make sure to look at all the import statements and initial variables above!*/
+    
     
     
     /*
