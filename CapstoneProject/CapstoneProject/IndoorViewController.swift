@@ -39,8 +39,9 @@ class IndoorViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         
-        cell.myLabel.text = items[indexPath.item]
-        
+        //cell.myLabel.text = items[indexPath.item]
+        cell.myButton.setTitle(items[indexPath.item], for: UIControlState.normal)
+
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.5
         
