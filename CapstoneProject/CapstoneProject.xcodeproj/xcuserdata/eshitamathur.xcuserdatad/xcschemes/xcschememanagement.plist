@@ -6,8 +6,28 @@
 	<dict>
 		<key>CapstoneProject.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>47789F8B202CD1B50087F89F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47789F9F202CD1B50087F89F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47789FAA202CD1B50087F89F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

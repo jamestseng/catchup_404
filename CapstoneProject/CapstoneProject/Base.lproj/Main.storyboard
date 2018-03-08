@@ -434,6 +434,14 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pnn-gZ-sAG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Next Screen"/>
+                                    <connections>
+                                        <segue destination="nhF-bK-N6c" kind="show" id="g7O-1K-ruI"/>
+                                    </connections>
+                                </button>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qm-nd-enC">
                                 <rect key="frame" x="0.0" y="311" width="375" height="44"/>
@@ -462,6 +470,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oiy-3Q-dHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4472.8000000000002" y="133.5832083958021"/>
+        </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="5qD-2D-XLH">
+            <objects>
+                <viewController id="nhF-bK-N6c" customClass="FeedViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y8c-s4-XqK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-Ee-itc">
+                                <rect key="frame" x="77" y="208" width="210" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Activate Yelp API"/>
+                                <connections>
+                                    <action selector="ActiveYelpAPI:" destination="nhF-bK-N6c" eventType="touchUpInside" id="Xga-YE-drb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="6s9-hW-Hq6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRr-qY-6HR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5296.8000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
